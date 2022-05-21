@@ -1,7 +1,9 @@
 
 const todo = document.getElementById('todo');
+let i = 0;
 function add(){
     //ambil nilai dari inputan
+    i = i+1;
     let newText = document.getElementById('new-list');
 
     //lakukan apa yang mau ditampilkan
@@ -20,5 +22,9 @@ function toggle(el){
 }
 function remove(el){
     el.parentElement.remove();
+    i=i-1;
+    if(i<=0){
+        todo.classList.remove('todo');
+    }
 }
 
